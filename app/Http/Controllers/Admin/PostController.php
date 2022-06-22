@@ -13,8 +13,10 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {  
+        $posts = Post::all();
+         dd($posts);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**

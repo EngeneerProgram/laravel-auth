@@ -21,7 +21,10 @@ Auth::routes();
 Route::middleware('auth')->namespace('Admin')
 ->name('admin.')->prefix('admin')
 ->group(function (){
+    //rotta amministrazione
     Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('posts', 'PostController');
+
 });
 
 
