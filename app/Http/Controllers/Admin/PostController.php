@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
+
 class PostController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {  
-        $posts = Post::all();
+        $posts = Post::orderByDesc('id')->get();
          
         return view('Admin.posts.index', compact('posts'));
     }
@@ -32,12 +34,14 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\PostRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-       dd($request->all());
+       $paux = $request->validated();
+       Post::create($paux);
+       return redirect()->route('admin.posts.index')->with('message', 'post creato con successo');
     }
 
     /**

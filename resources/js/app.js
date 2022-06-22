@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import App from './views/App';
 
 /**
  * The following block of code may be used to automatically register your
