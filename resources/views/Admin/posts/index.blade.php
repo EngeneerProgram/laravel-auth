@@ -2,7 +2,7 @@
 
 @section('content')
 <table class="table">
-    <thead>
+    <thead >
       <tr>
         <th scope="col">id</th>
         <th scope="col">titolo</th>
@@ -17,7 +17,7 @@
         <th scope="row">{{$post->id}}</th>
         <td>{{$post->titolo}}</td>
         <td>{{$post->descrizione}}</td>
-        <td><img src="{{$post->img}}" alt=""></td>
+        <td><img width="100px" src="{{$post->img}}" alt=""></td>
         <td>view - edit - delete</td>
       </tr>
 
