@@ -8,13 +8,13 @@
 @csrf
 <div class="form-group">
     <label for="exampleInputEmail1">Titolo</label>
-    <input name= type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input name='titolo' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <small id="emailHelp" class="form-text text-muted">Inserisci un titolo</small>
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Descrizione</label>
-    <input name="Descrizione" type="text"row="3" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input name="descrizione" type="text"row="3" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <small id="emailHelp" class="form-text text-muted">Inserisci una descrizione</small>
   </div>
 

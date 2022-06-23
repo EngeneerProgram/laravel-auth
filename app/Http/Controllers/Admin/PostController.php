@@ -40,6 +40,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
        $paux = $request->validated();
+       
        Post::create($paux);
        return redirect()->route('admin.posts.index')->with('message', 'post creato con successo');
     }

@@ -24,9 +24,9 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'titolo' => ['nullable', 'max:180'],
+            'titolo' => [ 'unique:posts', 'max:180'],
             'descrizione' => ['nullable'],
-            'img' =>['nullable']
+            'img' => ['nullable']
         ];
     }
 }
