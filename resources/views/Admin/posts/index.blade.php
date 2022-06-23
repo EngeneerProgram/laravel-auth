@@ -18,7 +18,13 @@
         <td>{{$post->titolo}}</td>
         <td>{{$post->descrizione}}</td>
         <td><img width="100px" src="{{$post->img}}" alt=""></td>
-        <td>view - edit - delete</td>
+        <td>
+         <a class="btn btn-primary text-white" href="{{route('admin.posts.show', $post->id)}}">View</a>
+         <a class="btn btn-secondary text-white" href="{{route('admin.posts.edit', $post->id)}}">Edit</a>
+          
+           delete
+          
+          </td>
       </tr>
 
       @empty
