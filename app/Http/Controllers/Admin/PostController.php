@@ -64,7 +64,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('Admin.posts.edit', compact('post'));
     }
 
     /**
@@ -74,9 +74,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        dd($request->all());
+
+        $paux = $request->validated();
+        dd($paux);
+
+        return redirect()->route('Admin.posts.index')->with('message', 'post modificato con successo');
     }
 
     /**
@@ -87,6 +92,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('Admin.posts.index')->with('message', 'Post eliminato con successo!');
     }
 }
